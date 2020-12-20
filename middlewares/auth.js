@@ -1,6 +1,7 @@
 //Middleware de autenticacion;
 const tokenServices = require('../services/token');
 
+
 module.exports = {
 
     verificarAdministrador: async(req, res, next)=>{
