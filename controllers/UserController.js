@@ -34,7 +34,7 @@ exports.login = async(req, res, next) =>{
     }
 };
 
-exports.register = async(req, res, next) =>{
+exports.add = async(req, res, next) =>{
     try {
         const user = await models.user.findOne({where: {email: req.body.email}});
         if(user){
@@ -93,6 +93,43 @@ exports.update = async(req, res, next) =>{
                 message: 'User not found.'
             })
         }
+    } catch (error){
+        res.status(500).send({
+            message: 'Error.'
+        });
+        next(error);
+
+    }
+};
+
+
+exports.activate = async(req, res, next) =>{
+    try {
+        const user = await models.user.update({estado: 1},
+            {
+                where: {
+                    id: req.body.id
+                },
+            });
+            res.status(200).json(user);
+    } catch (error){
+        res.status(500).send({
+            message: 'Error.'
+        });
+        next(error);
+
+    }
+};
+
+exports.deactivate = async(req, res, next) =>{
+    try {
+        const user = await models.user.update({estado: 0},
+            {
+                where: {
+                    id: req.body.id
+                },
+            });
+            res.status(200).json(user);
     } catch (error){
         res.status(500).send({
             message: 'Error.'

@@ -8,6 +8,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('users');
+    await queryInterface.dropTable('users');
   }
 };

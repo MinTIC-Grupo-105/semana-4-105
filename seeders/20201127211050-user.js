@@ -2,8 +2,8 @@
 
 module.exports = {
     up: async(queryInterface, Sequelize) => {
-        return queryInterface.bulkInsert('Usuarios', [{
-            nombre: 'carlos',
+        return queryInterface.bulkInsert('users', [{
+            name: 'carlos',
             email: 'prueba@gmail.com',
             password: '$2y$08$FTP/jKGNASwJf0ero7SBe.kQmUsOSjWYupPZ6/lS6en6RcithXFKO',
             rol: 'Administrador',
@@ -13,7 +13,7 @@ module.exports = {
     },
 
     down: async(queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('Usuarios', null, {});
+        return queryInterface.bulkDelete('users', null, {});
 
     }
 };
@@ -33,6 +33,7 @@ module.exports = {
 //             name: 'Felipe',
 //             email: 'luisf5588@gmail.com',
 //             password: '$2y$12$p4oZ5.VNvgwYHnTJzlPo7OtSCdZ2tEVhryp5NmrizP9mWBIG25Tb2', //micontraseñaa
+//             rol: 'Administrador',
 //             createdAt: new Date(),
 //             updatedAt: new Date(),
 
@@ -51,6 +52,14 @@ module.exports = {
 //             name: 'Santiago',
 //             email: 'luisf5588@gmail.com',
 //             password: '$2y$12$p4oZ5.VNvgwYHnTJzlPo7OtSCdZ2tEVhryp5NmrizP9mWBIG25Tb2', //micontraseñaa
+//             rol: 'Vendedor',
+//             createdAt: new Date(),
+//             updatedAt: new Date(),
+
+//             name: 'Felipe',
+//             email: 'luisf5588@gmail.com',
+//             password: '$2y$12$p4oZ5.VNvgwYHnTJzlPo7OtSCdZ2tEVhryp5NmrizP9mWBIG25Tb2', //micontraseñaa
+//             rol: 'Administrador',
 //             createdAt: new Date(),
 //             updatedAt: new Date(),
 //         }]);
